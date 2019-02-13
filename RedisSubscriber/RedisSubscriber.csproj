@@ -52,12 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aplicacao\MensagemApp.cs" />
+    <Compile Include="Aplicacao\OuvinteApp.cs" />
     <Compile Include="Auxiliares\ResolverConexao.cs" />
     <Compile Include="InjecaoDeDependencia.cs" />
-    <Compile Include="Interfaces\Aplicacao\IMensagemApp.cs" />
-    <Compile Include="Interfaces\Repositorio\IMensagemRep.cs" />
-    <Compile Include="Interfaces\Servico\IMensagemServ.cs" />
+    <Compile Include="Interfaces\Aplicacao\IOuvinteApp.cs" />
+    <Compile Include="Interfaces\Repositorio\IOuvinteRep.cs" />
+    <Compile Include="Interfaces\Servico\IOuvinteServ.cs" />
     <Compile Include="Mensagem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,10 +70,13 @@
     <Compile Include="Persistencia\Contexto\Interfaces\IConexao.cs" />
     <Compile Include="Persistencia\Contexto\Interfaces\IConexaoOuvinte.cs" />
     <Compile Include="Persistencia\Contexto\Interfaces\IResolverConexao.cs" />
-    <Compile Include="Persistencia\Repositorio\MensagemRep.cs" />
+    <Compile Include="Persistencia\Repositorio\OuvinteRep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicos\MensagemServ.cs" />
+    <Compile Include="Servicos\OuvinteServ.cs" />
+    <EmbeddedResource Include="Mensagem.resx">
+      <DependentUpon>Mensagem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

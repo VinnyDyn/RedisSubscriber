@@ -34,9 +34,9 @@ namespace RedisSubscriber
 
         private static void Registrar(Container container, Lifestyle lifeStyle)
         {
-            container.Register<IMensagemApp, MensagemApp>();
-            container.Register<IMensagemServ, MensagemServ>();
-            container.Register<IMensagemRep, MensagemRep>();
+            container.Register<IOuvinteApp, OuvinteApp>();
+            container.Register<IOuvinteServ, OuvinteServ>();
+            container.Register<IOuvinteRep, OuvinteRep>();
             container.Register<IResolverConexao, ResolverConexao>();
             container.Register<IConexaoOuvinte, ConexaoOuvinte>();
         }
