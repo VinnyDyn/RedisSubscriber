@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aplicacao\MensagemApp.cs" />
     <Compile Include="Auxiliares\ResolverConexao.cs" />
+    <Compile Include="InjecaoDeDependencia.cs" />
     <Compile Include="Interfaces\Aplicacao\IMensagemApp.cs" />
     <Compile Include="Interfaces\Repositorio\IMensagemRep.cs" />
     <Compile Include="Interfaces\Servico\IMensagemServ.cs" />
@@ -68,8 +70,10 @@
     <Compile Include="Persistencia\Contexto\Interfaces\IConexao.cs" />
     <Compile Include="Persistencia\Contexto\Interfaces\IConexaoOuvinte.cs" />
     <Compile Include="Persistencia\Contexto\Interfaces\IResolverConexao.cs" />
+    <Compile Include="Persistencia\Repositorio\MensagemRep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\MensagemServ.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -93,10 +97,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Aplicacao\" />
-    <Folder Include="Persistencia\Repositorio\" />
-    <Folder Include="Servicos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
