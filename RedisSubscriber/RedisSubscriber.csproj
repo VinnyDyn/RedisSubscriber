@@ -31,8 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SimpleInjector, Version=4.4.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.4.3\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net45\StackExchange.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,12 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Auxiliares\ResolverConexao.cs" />
+    <Compile Include="Interfaces\Aplicacao\IMensagemApp.cs" />
+    <Compile Include="Interfaces\Repositorio\IMensagemRep.cs" />
+    <Compile Include="Interfaces\Servico\IMensagemServ.cs" />
+    <Compile Include="Mensagem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Mensagem.Designer.cs">
+      <DependentUpon>Mensagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\MensagemMds\ReceberMd.cs" />
+    <Compile Include="Persistencia\Contexto\Conexao.cs" />
+    <Compile Include="Persistencia\Contexto\ConexaoOuvinte.cs" />
+    <Compile Include="Persistencia\Contexto\Interfaces\IConexao.cs" />
+    <Compile Include="Persistencia\Contexto\Interfaces\IConexaoOuvinte.cs" />
+    <Compile Include="Persistencia\Contexto\Interfaces\IResolverConexao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -61,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,6 +92,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Aplicacao\" />
+    <Folder Include="Persistencia\Repositorio\" />
+    <Folder Include="Servicos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
