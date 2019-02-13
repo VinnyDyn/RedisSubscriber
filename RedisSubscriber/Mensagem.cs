@@ -2,8 +2,10 @@
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using RedisSubscriber.Auxiliares;
 using RedisSubscriber.Modelos.MensagemMds;
 using RedisSubscriber.Interfaces.Aplicacao;
+using Microsoft.Azure.CognitiveServices.Search.WebSearch;
 
 namespace RedisSubscriber
 {
@@ -43,6 +45,15 @@ namespace RedisSubscriber
             StringBuilder sb = new StringBuilder();
             TxtHistorico.Text = sb.Append(TxtHistorico.Text)
                 .Append($"\r\n Publicador: { texto }").ToString();
+        }
+
+        public void Pesquisa()
+        {
+            //string question = "Cotação Dollar";
+            //string question = "Capital da Bahia";
+            string question = "2+2";
+            var client = new WebSearchClient(new ApiKeyServiceClientCredentials("cdab4adbb42a487a9e3423a4ec716739"));
+            string answer = BingSearch.WebResults(client, question);
         }
     }
 }
